@@ -7,6 +7,9 @@ sfr.load_encoding_images("images/")
 
 # Load Camera
 cap = cv2.VideoCapture(2)
+if not cap.isOpened():
+    print("Cannot open camera")
+    exit()
 
 while True:
     ret, frame = cap.read()
